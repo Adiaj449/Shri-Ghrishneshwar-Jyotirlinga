@@ -463,53 +463,79 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 800, // Duration of the animation
-    once: true,    // Whether animation should happen only once - true recommended for clean scrolling
+    duration: 800, 
+    once: true,
   });
   
   // ==========================================================
-  // NEW JAVASCRIPT FOR MOBILE MENU TOGGLE
+  // JAVASCRIPT FOR MOBILE MENU
   // ==========================================================
+  
+  // Utility function to close the menu and reset the icon
+  function closeMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const icon = document.querySelector('#mobile-menu-button i');
+      
+      // Only close if it's currently open
+      if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          icon.setAttribute('data-lucide', 'menu');
+          lucide.createIcons(); 
+      }
+  }
+
+  // Function to toggle the menu (called by the hamburger button)
   function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
+    const icon = document.querySelector('#mobile-menu-button i');
+    
+    // Toggle the 'hidden' class
     mobileMenu.classList.toggle('hidden');
     
-    // Optional: Change the icon from 'menu' to 'x' when open
-    const icon = document.querySelector('#mobile-menu-button i');
+    // Toggle the icon
     if (mobileMenu.classList.contains('hidden')) {
       icon.setAttribute('data-lucide', 'menu');
     } else {
       icon.setAttribute('data-lucide', 'x');
     }
-    // Recreate Lucide icons after changing the attribute
     lucide.createIcons(); 
   }
 
-  // ==========================================================
-  // EXISTING JAVASCRIPT
-  // ==========================================================
-  lucide.createIcons();
-  const donationForm = document.getElementById('donation-form');
-  const msg = document.getElementById('form-message');
-  if (donationForm) {
-    donationForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = document.getElementById('donor-name').value.trim();
-      const email = document.getElementById('donor-email').value.trim();
-      const amount = parseInt(document.getElementById('donor-amount').value);
-      msg.classList.remove('hidden','bg-red-100','text-red-700','bg-green-100','text-green-700');
-
-      if (!name || !email || amount < 101) {
-        msg.classList.add('bg-red-100','text-red-700');
-        msg.textContent = '⚠️ Please fill all fields and ensure minimum ₹101 donation.';
-      } else {
-        msg.classList.add('bg-green-100','text-green-700');
-        msg.textContent = `🙏 Thank you ${name}! Redirecting to secure payment for ₹${amount}...`;
-        // In a real application, you would add an actual payment gateway redirect here.
-        // donationForm.reset(); 
-      }
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Get all links inside the mobile menu
+    const mobileLinks = document.querySelectorAll('#mobile-menu a');
+    
+    // 2. Loop through them and add the close function to each click event
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
     });
-  }
+
+    // ==========================================================
+    // EXISTING JAVASCRIPT
+    // ==========================================================
+    lucide.createIcons();
+    const donationForm = document.getElementById('donation-form');
+    const msg = document.getElementById('form-message');
+    if (donationForm) {
+      donationForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('donor-name').value.trim();
+        const email = document.getElementById('donor-email').value.trim();
+        const amount = parseInt(document.getElementById('donor-amount').value);
+        msg.classList.remove('hidden','bg-red-100','text-red-700','bg-green-100','text-green-700');
+
+        if (!name || !email || amount < 101) {
+          msg.classList.add('bg-red-100','text-red-700');
+          msg.textContent = '⚠️ Please fill all fields and ensure minimum ₹101 donation.';
+        } else {
+          msg.classList.add('bg-green-100','text-green-700');
+          msg.textContent = `🙏 Thank you ${name}! Redirecting to secure payment for ₹${amount}...`;
+          // In a real application, you would add an actual payment gateway redirect here.
+          // donationForm.reset(); 
+        }
+      });
+    }
+  });
 </script>
 </body>
 </html>
