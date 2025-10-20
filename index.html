@@ -6,6 +6,8 @@
   <title>Shri Ghṛishneshwar Jyotirlinga - 12th Jyotirlinga</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <style>
     :root {
@@ -82,7 +84,7 @@
       transform: scale(1.15);
     }
 
-    /* --- NEW NAVIGATION STYLES --- */
+    /* --- NAVIGATION STYLES --- */
     .nav-link {
         position: relative;
         padding-bottom: 4px; /* Space for the underline */
@@ -182,7 +184,7 @@
     </section>
   
 
-  <section id="about" class="py-16 px-6 container mx-auto">
+  <section id="about" class="py-16 px-6 container mx-auto" data-aos="fade-up">
     <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">The Divine History (इतिहास)</h2>
     <div class="glass-card p-8 rounded-xl shadow-2xl">
       <p class="text-lg text-gray-700 leading-relaxed">
@@ -195,10 +197,10 @@
 
   <section id="darshan" class="py-16 px-6 bg-orange-50">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Darshan & Ritual Timings</h2>
+      <h2 class="text-4xl font-bold text-center text-orange-800 mb-10" data-aos="fade-up">Darshan & Ritual Timings</h2>
       <div class="grid md:grid-cols-2 gap-8">
         
-        <div class="glass-card p-8 rounded-xl shadow-2xl">
+        <div class="glass-card p-8 rounded-xl shadow-2xl" data-aos="fade-right" data-aos-duration="1000">
           <h3 class="text-2xl font-semibold text-orange-700 flex items-center mb-4">
             <i data-lucide="calendar" class="w-6 h-6 mr-3"></i> General Darshan
           </h3>
@@ -209,7 +211,7 @@
           </ul>
         </div>
 
-        <div class="glass-card p-8 rounded-xl shadow-2xl">
+        <div class="glass-card p-8 rounded-xl shadow-2xl" data-aos="fade-left" data-aos-duration="1000">
           <h3 class="text-2xl font-semibold text-orange-700 flex items-center mb-4">
             <i data-lucide="alert-triangle" class="w-6 h-6 mr-3"></i> Special Instructions
           </h3>
@@ -227,11 +229,11 @@
   </section>
 
   <section id="live" class="py-16 px-6 container mx-auto">
-    <h2 class="text-4xl font-bold text-center text-red-600 mb-10 flex items-center justify-center gap-4">
+    <h2 class="text-4xl font-bold text-center text-red-600 mb-10 flex items-center justify-center gap-4" data-aos="fade-up">
         <i data-lucide="radio" class="w-8 h-8 animate-pulse"></i>
         Live Darshan (प्रत्यक्ष दर्शन)
     </h2>
-    <div class="glass-card p-8 rounded-xl shadow-2xl text-center">
+    <div class="glass-card p-8 rounded-xl shadow-2xl text-center" data-aos="zoom-in" data-aos-delay="100">
       <div class="bg-gray-800 h-72 w-full max-w-4xl mx-auto rounded-lg shadow-xl flex items-center justify-center text-white text-xl font-bold">
         [LIVE VIDEO FEED EMBED GOES HERE]
         <br>
@@ -247,22 +249,22 @@
   </section>
 
 
-  <section id="seva" class="py-16 px-6 bg-orange-50">
+  <section id="seva" class="py-16 px-6 bg-orange-50" data-aos="fade-up" data-aos-delay="150">
     <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Puja & Seva Offerings</h2>
     <div class="glass-card p-8 rounded-xl shadow-2xl text-center">
       <p class="text-lg text-gray-700 mb-4">
         You can offer various pujas and sevas in your name or your family's name for Lord Ghṛishneshwar.
       </p>
       <div class="flex flex-wrap justify-center gap-6">
-        <div class="p-4 border border-orange-300 rounded-lg shadow-md hover:shadow-lg transition">
+        <div class="p-4 border border-orange-300 rounded-lg shadow-md hover:shadow-lg transition" data-aos="flip-left">
           <i data-lucide="cloud-lightning" class="w-8 h-8 text-orange-600 mx-auto mb-2"></i>
           <p class="font-medium">Rudrabhishek</p>
         </div>
-        <div class="p-4 border border-orange-300 rounded-lg shadow-md hover:shadow-lg transition">
+        <div class="p-4 border border-orange-300 rounded-lg shadow-md hover:shadow-lg transition" data-aos="flip-left" data-aos-delay="150">
           <i data-lucide="droplet" class="w-8 h-8 text-orange-600 mx-auto mb-2"></i>
           <p class="font-medium">Abhishekam</p>
         </div>
-        <div class="p-4 border border-orange-300 rounded-lg shadow-md hover:shadow-lg transition">
+        <div class="p-4 border border-orange-300 rounded-lg shadow-md hover:shadow-lg transition" data-aos="flip-left" data-aos-delay="300">
           <i data-lucide="flower" class="w-8 h-8 text-orange-600 mx-auto mb-2"></i>
           <p class="font-medium">Archana</p>
         </div>
@@ -271,21 +273,21 @@
     </div>
   </section>
   
-  <section id="gallery" class="py-16 px-6 container mx-auto">
+  <section id="gallery" class="py-16 px-6 container mx-auto" data-aos="fade-up">
     <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Temple Gallery (दर्शनम्)</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 1</div>
-      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 2</div>
-      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 3</div>
-      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 4</div>
+      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500" data-aos="zoom-in" data-aos-duration="600">Image 1</div>
+      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">Image 2</div>
+      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">Image 3</div>
+      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="450">Image 4</div>
     </div>
   </section>
 
-  <section id="donate-section" class="py-16 px-6 bg-orange-50">
+  <section id="donate-section" class="py-16 px-6 bg-orange-50" data-aos="fade-up">
     <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Support the Temple</h2>
     <div class="grid md:grid-cols-2 gap-10 items-center">
       
-      <div class="glass-card p-8 rounded-xl shadow-2xl">
+      <div class="glass-card p-8 rounded-xl shadow-2xl" data-aos="fade-right">
         <h3 class="text-2xl font-semibold text-orange-700 mb-4 flex items-center gap-2">
           <i data-lucide="hand-heart" class="w-6 h-6"></i> Contribute to Seva
         </h3>
@@ -314,7 +316,7 @@
         </form>
       </div>
 
-      <div class="p-8 border-l-4 border-orange-500 space-y-6">
+      <div class="p-8 border-l-4 border-orange-500 space-y-6" data-aos="fade-left">
         <div class="flex items-start">
           <i data-lucide="heart-handshake" class="w-8 h-8 text-orange-600 mr-4 flex-shrink-0"></i>
           <div>
@@ -340,12 +342,12 @@
     </div>
   </section>
 
-  <section id="contact" class="py-16 px-6 container mx-auto">
+  <section id="contact" class="py-16 px-6 container mx-auto" data-aos="fade-up">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Contact & Location</h2>
       <div class="grid md:grid-cols-2 gap-8">
         
-        <div class="glass-card p-8 rounded-xl shadow-2xl">
+        <div class="glass-card p-8 rounded-xl shadow-2xl" data-aos="fade-right">
           <h3 class="text-2xl font-semibold text-orange-700 flex items-center mb-4">
             <i data-lucide="mail" class="w-6 h-6 mr-3"></i> Get in Touch
           </h3>
@@ -354,7 +356,7 @@
           <p class="text-gray-700">**Email:** contact@ghrishneshwar.org</p>
         </div>
 
-        <div class="glass-card p-8 rounded-xl shadow-2xl">
+        <div class="glass-card p-8 rounded-xl shadow-2xl" data-aos="fade-left">
           <h3 class="text-2xl font-semibold text-orange-700 flex items-center mb-4">
             <i data-lucide="map" class="w-6 h-6 mr-3"></i> Location (Ellora Caves)
           </h3>
@@ -367,7 +369,7 @@
   </section>
 
 
-  <footer class="bg-orange-900 text-white py-8">
+  <footer class="bg-orange-900 text-white py-8" data-aos="fade-up">
     <div class="container mx-auto text-center px-6">
       <p class="text-lg font-bold mb-2">ॐ नमः शिवाय</p>
       <p class="text-sm mb-4">Shri Ghṛishneshwar Jyotirlinga, Verul, Maharashtra | The Divine Abode of Lord Shiva.</p>
@@ -382,7 +384,14 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    AOS.init({
+      duration: 800, // Duration of the animation
+      once: true,    // Whether animation should happen only once - true recommended for clean scrolling
+    });
+    
+    // Existing JavaScript remains below
     lucide.createIcons();
     const donationForm = document.getElementById('donation-form');
     const msg = document.getElementById('form-message');
@@ -401,7 +410,7 @@
           msg.classList.add('bg-green-100','text-green-700');
           msg.textContent = `🙏 Thank you ${name}! Redirecting to secure payment for ₹${amount}...`;
           // In a real application, you would add an actual payment gateway redirect here.
-          // donationForm.reset(); // Commented out to allow user to see the thank you message
+          // donationForm.reset(); 
         }
       });
     }
