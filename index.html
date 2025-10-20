@@ -132,6 +132,11 @@
             <span>Timings</span>
         </a>
 
+        <a href="#live" class="nav-link flex items-center gap-1 text-base font-bold text-red-600 hover:text-orange-800 animate-pulse">
+            <i data-lucide="video" class="w-4 h-4"></i>
+            <span>LIVE Darshan</span>
+        </a>
+
         <a href="#seva" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
             <i data-lucide="hand-heart" class="w-4 h-4"></i>
             <span>Puja/Seva</span>
@@ -170,8 +175,8 @@
         <p class="text-xl md:text-2xl mb-8 font-light italic text-gray-200 drop-shadow-lg">
             The Twelfth Sacred Abode of Lord Shiva — radiating eternal light and devotion.
         </p>
-        <a href="#darshan" class="btn-saffron px-8 py-3 rounded-full shadow-lg text-lg">
-            View Darshan Timings
+        <a href="#live" class="btn-saffron px-8 py-3 rounded-full shadow-lg text-lg flex items-center justify-center mx-auto w-fit">
+            <i data-lucide="video" class="w-5 h-5 mr-2"></i> Watch Live Darshan
         </a>
         </div>
     </section>
@@ -221,7 +226,28 @@
     </div>
   </section>
 
-  <section id="seva" class="py-16 px-6 container mx-auto">
+  <section id="live" class="py-16 px-6 container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-red-600 mb-10 flex items-center justify-center gap-4">
+        <i data-lucide="radio" class="w-8 h-8 animate-pulse"></i>
+        Live Darshan (प्रत्यक्ष दर्शन)
+    </h2>
+    <div class="glass-card p-8 rounded-xl shadow-2xl text-center">
+      <div class="bg-gray-800 h-72 w-full max-w-4xl mx-auto rounded-lg shadow-xl flex items-center justify-center text-white text-xl font-bold">
+        [LIVE VIDEO FEED EMBED GOES HERE]
+        <br>
+        Currently displaying temple view during Darshan hours.
+      </div>
+      <p class="text-lg text-gray-700 mt-6">
+        Experience the divine presence of Shri Ghṛishneshwar Jyotirlinga from anywhere in the world. Live stream available during main Darshan timings.
+      </p>
+      <div class="mt-4 text-sm text-gray-600">
+        **Note:** Live feed may be temporarily offline during Nitya Puja or temple closure hours.
+      </div>
+    </div>
+  </section>
+
+
+  <section id="seva" class="py-16 px-6 bg-orange-50">
     <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Puja & Seva Offerings</h2>
     <div class="glass-card p-8 rounded-xl shadow-2xl text-center">
       <p class="text-lg text-gray-700 mb-4">
@@ -245,19 +271,17 @@
     </div>
   </section>
   
-  <section id="gallery" class="py-16 px-6 bg-orange-50">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Temple Gallery (दर्शनम्)</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 1</div>
-        <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 2</div>
-        <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 3</div>
-        <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 4</div>
-      </div>
+  <section id="gallery" class="py-16 px-6 container mx-auto">
+    <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Temple Gallery (दर्शनम्)</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 1</div>
+      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 2</div>
+      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 3</div>
+      <div class="bg-gray-200 h-32 md:h-48 rounded-lg shadow-lg flex items-center justify-center text-gray-500">Image 4</div>
     </div>
   </section>
 
-  <section id="donate-section" class="py-16 px-6 container mx-auto">
+  <section id="donate-section" class="py-16 px-6 bg-orange-50">
     <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Support the Temple</h2>
     <div class="grid md:grid-cols-2 gap-10 items-center">
       
@@ -316,7 +340,7 @@
     </div>
   </section>
 
-  <section id="contact" class="py-16 px-6 bg-orange-50">
+  <section id="contact" class="py-16 px-6 container mx-auto">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold text-center text-orange-800 mb-10">Contact & Location</h2>
       <div class="grid md:grid-cols-2 gap-8">
