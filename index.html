@@ -123,6 +123,11 @@
   
       <nav id="desktop-nav" class="hidden md:flex items-center space-x-7">
         
+        <a href="/admin/login" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600" title="Admin Login">
+            <i data-lucide="key-round" class="w-4 h-4"></i>
+            <span>Admin</span>
+        </a>
+
         <a href="#home" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
             <i data-lucide="home" class="w-4 h-4"></i>
             <span>Home</span>
@@ -167,7 +172,10 @@
             <i data-lucide="map-pin" class="w-4 h-4"></i>
             <span>Contact</span>
         </a>
-
+        
+        <a href="#donate-section" class="btn-saffron px-5 py-2.5 rounded-full shadow-lg text-sm md:text-base ml-4 flex items-center gap-1.5 transition duration-300 ease-in-out">
+          <i data-lucide="heart" class="w-4 h-4"></i> Donate Now
+        </a>
       </nav>
       
       <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden text-orange-800 p-2 rounded-full hover:bg-orange-100 transition">
@@ -177,6 +185,11 @@
     </div>
     
     <nav id="mobile-menu" class="hidden md:hidden w-full bg-white/90 shadow-inner py-4 px-6 border-t border-orange-200">
+        <a href="/admin/login" class="nav-link py-2 flex items-center gap-2 text-base font-bold text-red-700 hover:text-orange-800 border-b border-orange-300 bg-orange-50/50">
+            <i data-lucide="key-round" class="w-4 h-4"></i>
+            <span>Admin Login</span>
+        </a>
+        
         <a href="#home" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
             <i data-lucide="home" class="w-4 h-4"></i>
             <span>Home</span>
