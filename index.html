@@ -1,327 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shri Grishneshwar Jyotirlinga - 12th Jyotirlinga</title>
-    <!-- Load Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons for aesthetic components -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        /* Define a custom color palette for a devotional theme */
-        :root {
-            --color-saffron: #ff9933; /* For highlights and buttons */
-            --color-maroon: #800000;  /* For primary background accents */
-            --color-gold: #FFD700;    /* For subtle accents */
-            --color-dark: #2c3e50;    /* Dark navy for text and background */
-        }
-        
-        /* Apply the Inter font and set body background */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fff8f0; /* UPDATED: Light Orange/Saffron Background */
-            color: var(--color-dark);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shri Grishneshwar Jyotirlinga - 12th Jyotirlinga</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* 🌅 Theme Colors */
+    :root {
+      --saffron: #ff9800;
+      --deep-orange: #e65100;
+      --gold: #ffd54f;
+      --dark: #1a1a1a;
+    }
 
-        /* Custom utility for the main saffron button */
-        .btn-saffron {
-            background-color: var(--color-saffron);
-            color: var(--color-dark);
-            font-weight: 600;
-            transition: all 0.2s;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #fff3e0 0%, #ffe0b2 100%);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
 
-        .btn-saffron:hover {
-            background-color: #ffb366; /* Lighter saffron on hover */
-        }
-        
-        /* Ensure the main sections have appropriate padding */
-        .section-padding {
-            padding: 4rem 1.5rem;
-        }
+    /* 🔶 Button Style */
+    .btn-saffron {
+      background: linear-gradient(90deg, var(--saffron), var(--deep-orange));
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
 
-        /* Hero gradient background */
-        .hero-bg {
-            background-image: linear-gradient(to top, var(--color-dark), rgba(44, 62, 80, 0.9)), 
-                              url('https://placehold.co/1200x600/2c3e50/ffffff?text=Grishneshwar+Mandir');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    .btn-saffron:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+    }
+
+    /* 🧿 Glass Card Effect */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Hero Section Parallax */
+    .hero-bg {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+        url('https://images.unsplash.com/photo-1616745302826-23e3b5b3e594?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Smooth icon entrance */
+    [data-lucide] {
+      transition: transform 0.3s ease;
+    }
+
+    [data-lucide]:hover {
+      transform: scale(1.15);
+    }
+  </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navbar -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <!-- Logo/Title -->
-            <a href="#" class="flex items-center text-xl font-bold text-gray-800">
-                <i data-lucide="om" class="w-6 h-6 mr-2 text-red-700"></i>
-                Grishneshwar Jyotirlinga
-            </a>
-            
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-red-700">
-                <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
-            </button>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex space-x-6 items-center">
-                <a href="#home" class="text-gray-600 hover:text-red-700 font-medium transition duration-150">Home</a>
-                <a href="#about" class="text-gray-600 hover:text-red-700 font-medium transition duration-150">History</a>
-                <a href="#darshan" class="text-gray-600 hover:text-red-700 font-medium transition duration-150">Timings</a>
-                <a href="#donate-section" class="btn-saffron px-4 py-2 rounded-full shadow-md hover:shadow-lg transition duration-150">
-                    <span class="flex items-center"><i data-lucide="heart" class="w-4 h-4 mr-1"></i> Donate</span>
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden flex-col items-center justify-center space-y-8 lg:hidden">
-        <button id="close-menu-button" class="absolute top-6 right-6 p-2 rounded-md hover:bg-gray-100 focus:outline-none">
-            <i data-lucide="x" class="w-8 h-8 text-gray-700"></i>
-        </button>
-        <a href="#home" class="text-3xl text-gray-800 hover:text-red-700 font-semibold" onclick="closeMenu()">Home</a>
-        <a href="#about" class="text-3xl text-gray-800 hover:text-red-700 font-semibold" onclick="closeMenu()">History</a>
-        <a href="#darshan" class="text-3xl text-gray-800 hover:text-red-700 font-semibold" onclick="closeMenu()">Timings</a>
-        <a href="#donate-section" class="btn-saffron text-2xl px-6 py-3 rounded-full shadow-xl" onclick="closeMenu()">Donate</a>
+  <!-- Navbar -->
+  <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50 border-b border-orange-200">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <a href="#" class="flex items-center text-xl font-extrabold text-orange-800 tracking-tight">
+        <i data-lucide="flame" class="w-6 h-6 mr-2 text-orange-600"></i>
+        Grishneshwar Jyotirlinga
+      </a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-orange-600 font-medium">Home</a>
+        <a href="#about" class="hover:text-orange-600 font-medium">History</a>
+        <a href="#darshan" class="hover:text-orange-600 font-medium">Timings</a>
+        <a href="#donate-section" class="btn-saffron px-4 py-2 rounded-full shadow-md flex items-center gap-1">
+          <i data-lucide="heart" class="w-4 h-4"></i> Donate
+        </a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center text-white section-padding">
-        <div class="max-w-4xl p-8 bg-black bg-opacity-40 rounded-xl shadow-2xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
-                <span class="text-yellow-400">Shri Grishneshwar</span> Jyotirlinga
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 font-light italic">
-                The 12th and Final Divine Seat of Lord Shiva.
-            </p>
-            <a href="#darshan" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-xl transition duration-300 transform hover:scale-105">
-                View Today's Darshan Timings
-            </a>
+  <!-- Hero Section -->
+  <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent"></div>
+    <div class="relative z-10 max-w-3xl px-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg">
+        ॐ श्री <span class="text-orange-400">गृहेश्वर</span> ज्योतिर्लिंग
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 font-light italic text-gray-200">
+        The Twelfth Sacred Abode of Lord Shiva, in the land of devotion and light.
+      </p>
+      <a href="#darshan" class="btn-saffron px-8 py-3 rounded-full shadow-lg text-lg">
+        View Darshan Timings
+      </a>
+    </div>
+  </section>
+
+  <!-- Timings Section -->
+  <section id="darshan" class="py-20 bg-gradient-to-b from-orange-50 to-white">
+    <div class="container mx-auto text-center mb-12">
+      <h2 class="text-4xl font-bold text-orange-800 mb-3">🕉️ Daily Darshan & Puja</h2>
+      <p class="text-gray-600">Experience divine bliss and sacred rituals every day</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 container mx-auto px-6">
+      <!-- Card 1 -->
+      <div class="glass-card p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+        <i data-lucide="clock" class="w-10 h-10 text-orange-600 mb-4 mx-auto"></i>
+        <h3 class="text-2xl font-semibold mb-2 text-orange-800">Darshan Timings</h3>
+        <p class="text-gray-700 mb-1">Morning: <strong>5:30 AM - 12:00 PM</strong></p>
+        <p class="text-gray-700 mb-3">Evening: <strong>1:00 PM - 9:30 PM</strong></p>
+        <p class="text-sm text-red-600">*Subject to change on festivals like Mahashivratri*</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="glass-card p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+        <i data-lucide="sparkles" class="w-10 h-10 text-yellow-500 mb-4 mx-auto"></i>
+        <h3 class="text-2xl font-semibold mb-3 text-orange-800">Puja Seva</h3>
+        <ul class="text-gray-700 space-y-2">
+          <li>🌿 Rudra Abhishek</li>
+          <li>🪔 Panchamrut Pujan</li>
+          <li>🍃 Bilva Patra Archana</li>
+          <li>🕉 Maha Mrityunjaya Jaap</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="glass-card p-8 rounded-2xl shadow-lg hover:shadow-2xl transition">
+        <i data-lucide="shield" class="w-10 h-10 text-red-600 mb-4 mx-auto"></i>
+        <h3 class="text-2xl font-semibold mb-3 text-orange-800">Guidelines</h3>
+        <p class="text-gray-700 mb-2">🧎‍♂️ Men: Must remove shirt/vest before entering Garbhagriha.</p>
+        <p class="text-gray-700 mb-2">👗 Women: Wear traditional attire (Saree, Salwar, Chudidar).</p>
+        <p class="text-gray-700">📵 Mobiles, cameras & leather goods not allowed inside sanctum.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto max-w-5xl text-center mb-10">
+      <h2 class="text-4xl font-bold text-orange-800 mb-3">📜 The Divine Legend</h2>
+      <p class="text-gray-600">The tale of Ghushma’s devotion and the eternal Jyotirlinga</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 px-6 items-center">
+      <div class="text-left">
+        <h3 class="text-2xl font-semibold text-orange-900 mb-3">The Story of Ghushma</h3>
+        <p class="text-gray-700 mb-4">
+          Devotee Ghushma offered 101 Shiva Lingas daily. When her faith was tested through loss, she remained unshaken.
+        </p>
+        <p class="text-gray-700 mb-4">
+          Lord Shiva appeared, blessing her devotion, declaring His eternal presence here as <strong>Ghushmeshwar Jyotirlinga</strong>.
+        </p>
+        <p class="text-orange-600 font-medium italic">
+          Reconstructed by Queen Ahilyabai Holkar in the 18th century — a symbol of eternal devotion.
+        </p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1608454746607-6d6d3e6b9a07?auto=format&fit=crop&w=800&q=80" 
+           alt="Temple architecture" 
+           class="rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-500">
+    </div>
+  </section>
+
+  <!-- Donation -->
+  <section id="donate-section" class="py-20 bg-gradient-to-r from-orange-600 to-orange-800 text-white">
+    <div class="container mx-auto text-center max-w-3xl">
+      <h2 class="text-4xl font-bold mb-4 text-yellow-300">🙏 Support the Temple</h2>
+      <p class="mb-8 text-lg text-orange-100">Help maintain rituals, restore heritage & serve the community.</p>
+      
+      <form id="donation-form" class="bg-white p-8 rounded-2xl shadow-xl text-gray-800 space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="font-medium">Full Name</label>
+            <input id="donor-name" type="text" class="w-full p-3 border rounded-lg" placeholder="Devotee Name" required>
+          </div>
+          <div>
+            <label class="font-medium">Email</label>
+            <input id="donor-email" type="email" class="w-full p-3 border rounded-lg" placeholder="you@example.com" required>
+          </div>
         </div>
-    </section>
-
-    <!-- Darshan Timings & Info Section -->
-    <section id="darshan" class="section-padding bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12 text-maroon">Daily Services & Timings</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1: Timings -->
-                <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <i data-lucide="clock" class="w-8 h-8 text-saffron mr-3"></i>
-                        <h3 class="text-2xl font-semibold text-gray-800">Darshan Timings</h3>
-                    </div>
-                    <ul class="space-y-2 text-lg text-gray-600 list-none pl-0">
-                        <li>**Morning:** 5:30 AM - 12:00 PM</li>
-                        <li>**Evening:** 1:00 PM - 9:30 PM</li>
-                    </ul>
-                    <p class="mt-4 text-sm text-red-600 font-medium">
-                        *Timings are subject to change during festival periods like Mahashivratri.*
-                    </p>
-                </div>
-
-                <!-- Card 2: Puja Services -->
-                <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                    <div class="flex items-center mb-4">
-                        <i data-lucide="sparkles" class="w-8 h-8 text-saffron mr-3"></i>
-                        <h3 class="text-2xl font-semibold text-gray-800">Puja Services</h3>
-                    </div>
-                    <ul class="space-y-2 text-lg text-gray-600 list-disc list-inside">
-                        <li>Rudra Abhishek</li>
-                        <li>Panchamrut Pujan</li>
-                        <li>Bilva Patra Archana</li>
-                        <li>Maha Mrityunjaya Jaap</li>
-                    </ul>
-                    <p class="mt-4 text-sm text-gray-500">
-                        Please inquire at the temple office for booking and required materials.
-                    </p>
-                </div>
-
-                <!-- Card 3: Important Rules (Updated with Sections and Emojis) -->
-                <div class="bg-gray-100 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                    <div class="flex items-center mb-4 border-b pb-3 border-gray-300">
-                        <i data-lucide="scroll" class="w-8 h-8 text-saffron mr-3"></i>
-                        <h3 class="text-2xl font-semibold text-gray-800">Important Temple Guidelines</h3>
-                    </div>
-                    
-                    <!-- Rule Section 1: Attire -->
-                    <div class="mb-4 p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
-                        <p class="text-xl font-bold mb-2 text-red-700 flex items-center">
-                            <span class="mr-2">🥻</span> Dress Code (Vastra Paridhaan)
-                        </p>
-                        <ul class="space-y-3 text-gray-700 text-sm list-none pl-0">
-                            <li>
-                                **For Men:** You **must remove your shirt/vest** before entering the main **Garbhagriha** (sanctum). This practice signifies **reverence, humility, and purity** when approaching the deity.
-                            </li>
-                            <li>
-                                **For Ladies/Girls:** Traditional Indian attire is **mandatory** (e.g., Saree, Salwar Kameez, Chudidar) to maintain the sanctity of the temple premises.
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Rule Section 2: Prohibited Items -->
-                    <div class="mb-4 p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
-                        <p class="text-xl font-bold mb-2 text-yellow-700 flex items-center">
-                            <span class="mr-2">📵</span> Electronic & Leather Items
-                        </p>
-                        <ul class="space-y-2 text-gray-700 text-sm list-none pl-0">
-                            <li>**Mobile phones**, cameras, and all electronic devices are strictly prohibited.</li>
-                            <li>No leather goods (belts, wallets, bags) or footwear allowed inside the sanctum.</li>
-                        </ul>
-                    </div>
-
-                    <p class="mt-4 text-base text-maroon font-medium text-center">
-                        We request your kind cooperation to ensure a serene and spiritual darshan experience.
-                    </p>
-                </div>
-            </div>
+        <div>
+          <label class="font-medium">Donation Amount (₹)</label>
+          <input id="donor-amount" type="number" min="101" class="w-full p-3 border-2 border-orange-500 text-2xl font-bold rounded-lg" placeholder="Minimum ₹101" required>
         </div>
-    </section>
+        <div id="form-message" class="hidden p-4 rounded-lg text-left font-medium"></div>
+        <button type="submit" class="btn-saffron w-full py-3 rounded-lg text-lg flex justify-center items-center gap-2">
+          <i data-lucide="credit-card" class="w-5 h-5"></i> Proceed to Secure Payment
+        </button>
+      </form>
+    </div>
+  </section>
 
-    <!-- About/History Section -->
-    <section id="about" class="section-padding bg-white">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-4xl font-bold text-center mb-12 text-maroon">The Legend and History</h2>
-            
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <!-- Text Content -->
-                <div>
-                    <h3 class="text-3xl font-semibold mb-4 text-gray-800">The Story of Ghushma</h3>
-                    <p class="mb-4 text-lg text-gray-700">
-                        Grishneshwar is revered as the last of the 12 Jyotirlingas. Its name is derived from the legend of the devout woman **Ghushma**. She was known for her unwavering devotion to Lord Shiva, performing the ritual of submerging 101 Shiva Lingas in a pond daily.
-                    </p>
-                    <p class="mb-4 text-lg text-gray-700">
-                        Even after a terrible tragedy, her faith remained steadfast. Pleased by her devotion, Lord Shiva appeared and established himself eternally in the form of the Jyotirlinga here, declaring that he would be known by her name: **Ghushmeshwar** (or Grishneshwar).
-                    </p>
-                    <p class="text-lg text-red-700 font-medium italic">
-                        The temple complex, a masterpiece of ancient architecture, was prominently renovated by Queen Ahilyabai Holkar in the 18th century.
-                    </p>
-                </div>
-                
-                <!-- Placeholder Image -->
-                <div class="rounded-xl shadow-2xl overflow-hidden">
-                    <img src="https://placehold.co/600x400/800000/ffffff?text=Temple+Architecture" alt="Placeholder image of temple architecture" class="w-full h-auto object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+    <div class="flex justify-center space-x-6 mb-4">
+      <i data-lucide="facebook" class="w-5 h-5 hover:text-white"></i>
+      <i data-lucide="youtube" class="w-5 h-5 hover:text-white"></i>
+      <i data-lucide="map-pin" class="w-5 h-5 hover:text-white"></i>
+    </div>
+    <p>Shri Grishneshwar Jyotirlinga, Verul, Maharashtra, India.</p>
+    <p class="text-sm mt-2">© <span id="year"></span> Grishneshwar Devasthan Trust</p>
+  </footer>
 
-    <!-- Donation Form Section -->
-    <section id="donate-section" class="section-padding bg-maroon text-white">
-        <div class="container mx-auto max-w-3xl text-center">
-            <h2 class="text-4xl font-bold mb-4 text-yellow-400">Support the Temple</h2>
-            <p class="text-xl mb-8 opacity-90">
-                Your voluntary contribution helps maintain the temple, support daily rituals, and fund community welfare projects.
-            </p>
-            
-            <!-- Donation Form -->
-            <form id="donation-form" class="bg-white p-8 rounded-xl shadow-2xl text-gray-800">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label for="donor-name" class="block text-left font-medium mb-2">Full Name</label>
-                        <input type="text" id="donor-name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" placeholder="Yatri Devotee" required>
-                    </div>
-                    <div>
-                        <label for="donor-email" class="block text-left font-medium mb-2">Email Address</label>
-                        <input type="email" id="donor-email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500" placeholder="seva@example.com" required>
-                    </div>
-                </div>
-                
-                <div class="mb-6">
-                    <label for="donor-amount" class="block text-left font-medium mb-2">Donation Amount (₹)</label>
-                    <input type="number" id="donor-amount" min="101" class="w-full p-3 text-2xl font-bold border-2 border-red-500 rounded-lg focus:ring-red-600 focus:border-red-600" placeholder="Minimum ₹101" required>
-                </div>
-                
-                <!-- Message Box for Alerts (replacing alert()) -->
-                <div id="form-message" class="hidden p-4 rounded-lg text-left mb-4 font-medium" role="alert"></div>
+  <script>
+    lucide.createIcons();
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-                <button type="submit" class="w-full btn-saffron text-lg py-3 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01]">
-                    Proceed to Secure Payment
-                </button>
-            </form>
-        </div>
-    </section>
+    const donationForm = document.getElementById('donation-form');
+    const msg = document.getElementById('form-message');
+    donationForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('donor-name').value.trim();
+      const email = document.getElementById('donor-email').value.trim();
+      const amount = parseInt(document.getElementById('donor-amount').value);
+      msg.classList.remove('hidden','bg-red-100','text-red-700','bg-green-100','text-green-700');
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-400 py-8">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="hover:text-white transition duration-150"><i data-lucide="facebook" class="w-6 h-6"></i></a>
-                <a href="#" class="hover:text-white transition duration-150"><i data-lucide="youtube" class="w-6 h-6"></i></a>
-                <a href="#" class="hover:text-white transition duration-150"><i data-lucide="map-pin" class="w-6 h-6"></i></a>
-            </div>
-            <p class="text-sm mb-2">
-                Shri Grishneshwar Jyotirlinga, Verul, Aurangabad District, Maharashtra, India.
-            </p>
-            <p class="text-xs">
-                © <span id="current-year"></span> Grishneshwar Devasthan Trust. All Rights Reserved.
-            </p>
-        </div>
-    </footer>
-
-    <!-- JavaScript Logic -->
-    <script>
-        // Ensure Lucide icons are rendered
-        lucide.createIcons();
-
-        // 1. Set the Current Year in the Footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // 2. Mobile Menu Toggle Logic
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMenuButton = document.getElementById('close-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        function openMenu() {
-            mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-        }
-
-        function closeMenu() {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        mobileMenuButton.addEventListener('click', openMenu);
-        closeMenuButton.addEventListener('click', closeMenu);
-
-
-        // 3. Donation Form Handler (Client-Side)
-        const donationForm = document.getElementById('donation-form');
-        const formMessage = document.getElementById('form-message');
-
-        donationForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('donor-name').value.trim();
-            const email = document.getElementById('donor-email').value.trim();
-            const amount = parseInt(document.getElementById('donor-amount').value);
-
-            formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
-
-            if (amount < 101) {
-                // Custom error message (instead of alert)
-                formMessage.classList.add('bg-red-100', 'text-red-700');
-                formMessage.textContent = "🙏 Donation failed: The minimum amount is ₹101. Please offer a higher amount.";
-            } else if (!name || !email || isNaN(amount)) {
-                formMessage.classList.add('bg-red-100', 'text-red-700');
-                formMessage.textContent = "⚠️ Please fill in all fields correctly before proceeding.";
-            } else {
-                // Success/Proceed message
-                formMessage.classList.add('bg-green-100', 'text-green-700');
-                formMessage.textContent = `✅ Thank you, ${name}! Redirecting you to the secure payment gateway for ₹${amount}...`;
-                
-                // Here you would typically integrate with a payment gateway SDK (like Razorpay/Stripe client code).
-                // Since this is pure HTML/JS, we just display the success message.
-                donationForm.reset();
-            }
-        });
-    </script>
+      if (!name || !email || amount < 101) {
+        msg.classList.add('bg-red-100','text-red-700');
+        msg.textContent = '⚠️ Please fill all fields and ensure minimum ₹101 donation.';
+      } else {
+        msg.classList.add('bg-green-100','text-green-700');
+        msg.textContent = `🙏 Thank you ${name}! Redirecting to secure payment for ₹${amount}...`;
+        donationForm.reset();
+      }
+    });
+  </script>
 </body>
 </html>
