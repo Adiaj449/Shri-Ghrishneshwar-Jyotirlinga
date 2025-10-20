@@ -1,58 +1,62 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ॐ श्री घृष्णेश्वर ज्योतिर्लिंग</title>
+  <title>Shri Ghṛishneshwar Jyotirlinga - 12th Jyotirlinga</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700&display=swap');
-
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Noto Sans Devanagari', sans-serif;
+    :root {
+      --saffron: #ff9800;
+      --deep-orange: #e65100;
+      --gold: #ffd54f;
+      --dark: #1a1a1a;
     }
 
-    .background {
-      background-image: url('IMG_4002.jpeg'); /* Replace with correct image path */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #fff3e0 0%, #ffe0b2 100%);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
+
+    .btn-saffron {
+      background: linear-gradient(90deg, var(--saffron), var(--deep-orange));
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-saffron:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* 🌄 Replace hero background with uploaded temple image */
+    .hero-bg {
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+        url('/Images/IMG_4002.jpeg'); /* your uploaded image */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
     }
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    .text {
-      position: relative;
-      color: #ffd700; /* golden */
-      font-size: 4rem;
-      text-align: center;
-      font-weight: bold;
+    /* 🔆 Glowing text effect for sacred title */
+    .glow-text {
+      color: #ffd700;
       text-shadow:
         0 0 10px #fff,
         0 0 20px #ffcc00,
-        0 0 30px #ff9900,
         0 0 40px #ff6600;
-      animation: fadeIn 3s ease forwards, glow 2s ease-in-out infinite alternate;
-      z-index: 1;
-      opacity: 0;
+      animation: glow 3s ease-in-out infinite alternate;
     }
 
     @keyframes glow {
@@ -70,22 +74,78 @@
       }
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+    [data-lucide] {
+      transition: transform 0.3s ease;
     }
 
-    @media (max-width: 768px) {
-      .text {
-        font-size: 2.2rem;
-      }
+    [data-lucide]:hover {
+      transform: scale(1.15);
     }
   </style>
 </head>
-<body>
-  <div class="background">
-    <div class="overlay"></div>
-    <div class="text">ॐ श्री घृष्णेश्वर ज्योतिर्लिंग</div>
-  </div>
+
+<body class="antialiased">
+
+  <!-- Navbar -->
+  <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50 border-b border-orange-200">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <a href="#" class="flex items-center text-xl font-extrabold text-orange-800 tracking-tight">
+        <i data-lucide="flame" class="w-6 h-6 mr-2 text-orange-600"></i>
+        Ghṛishneshwar Jyotirlinga
+      </a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-orange-600 font-medium">Home</a>
+        <a href="#about" class="hover:text-orange-600 font-medium">History</a>
+        <a href="#darshan" class="hover:text-orange-600 font-medium">Timings</a>
+        <a href="#donate-section" class="btn-saffron px-4 py-2 rounded-full shadow-md flex items-center gap-1">
+          <i data-lucide="heart" class="w-4 h-4"></i> Donate
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-t from-orange-900/70 to-transparent"></div>
+    <div class="relative z-10 max-w-3xl px-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg glow-text">
+        ॐ श्री <span class="text-orange-400">घृष्णेश्वर</span> ज्योतिर्लिंग
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 font-light italic text-gray-200">
+        The Twelfth Sacred Abode of Lord Shiva, in the land of devotion and light.
+      </p>
+      <a href="#darshan" class="btn-saffron px-8 py-3 rounded-full shadow-lg text-lg">
+        View Darshan Timings
+      </a>
+    </div>
+  </section>
+
+  <!-- Rest of your sections stay same -->
+  <!-- (Darshan, History, Donation, Footer) -->
+  <!-- ... Paste rest of your code below this hero section ... -->
+
+  <script>
+    lucide.createIcons();
+    const donationForm = document.getElementById('donation-form');
+    const msg = document.getElementById('form-message');
+    if (donationForm) {
+      donationForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('donor-name').value.trim();
+        const email = document.getElementById('donor-email').value.trim();
+        const amount = parseInt(document.getElementById('donor-amount').value);
+        msg.classList.remove('hidden','bg-red-100','text-red-700','bg-green-100','text-green-700');
+
+        if (!name || !email || amount < 101) {
+          msg.classList.add('bg-red-100','text-red-700');
+          msg.textContent = '⚠️ Please fill all fields and ensure minimum ₹101 donation.';
+        } else {
+          msg.classList.add('bg-green-100','text-green-700');
+          msg.textContent = `🙏 Thank you ${name}! Redirecting to secure payment for ₹${amount}...`;
+          donationForm.reset();
+        }
+      });
+    }
+  </script>
 </body>
 </html>
