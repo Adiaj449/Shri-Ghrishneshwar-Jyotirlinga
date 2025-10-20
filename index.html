@@ -120,136 +120,94 @@
 </head>
 
 <body class="antialiased">
-
-<header id="main-header" class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-orange-300">
-    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+    <header id="main-header" class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-orange-300">
+        <div class="container mx-auto flex justify-between items-center px-6 py-4">
+          
+          <a href="#home" class="flex items-center text-2xl md:text-3xl font-extrabold tracking-tight text-orange-800">
+            <i data-lucide="om" class="w-7 h-7 mr-3 text-orange-600"></i>
+            <span class="text-orange-900 font-serif">श्री घृष्णेश्वर ज्योतिर्लिंग</span>
+          </a>
       
-      <a href="#home" class="flex items-center text-2xl md:text-3xl font-extrabold tracking-tight text-orange-800">
-        <i data-lucide="om" class="w-7 h-7 mr-3 text-orange-600"></i>
-        <span class="text-orange-900 font-serif">श्री घृष्णेश्वर ज्योतिर्लिंग</span>
-      </a>
-  
-      <nav id="desktop-nav" class="hidden md:flex items-center space-x-7">
-        
-        <a href="#" onclick="openLoginModal(event)" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600" title="Admin Login">
-            <i data-lucide="key-round" class="w-4 h-4"></i>
-            <span>Admin</span>
-        </a>
-
-        <a href="#home" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
-            <i data-lucide="home" class="w-4 h-4"></i>
-            <span>Home</span>
-        </a>
-
-        <a href="#about" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
-            <i data-lucide="book-open-text" class="w-4 h-4"></i>
-            <span>History</span>
-        </a>
-
-        <a href="#darshan" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
-            <i data-lucide="clock" class="w-4 h-4"></i>
-            <span>Timings</span>
-        </a>
-
-        <a href="#live" class="nav-link flex items-center gap-1 text-base font-bold text-red-600 hover:text-orange-800 animate-pulse">
-            <i data-lucide="video" class="w-4 h-4"></i>
-            <span>LIVE Darshan</span>
-        </a>
-
-        <a href="#donate-section" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
-            <i data-lucide="indian-rupee" class="w-4 h-4"></i>
-            <span>Donation</span>
-        </a>
-
-        <a href="#seva" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
-            <i data-lucide="hand-heart" class="w-4 h-4"></i>
-            <span>Puja/Seva</span>
-        </a>
-
-        <a href="#gallery" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
-            <i data-lucide="image" class="w-4 h-4"></i>
-            <span>Gallery</span>
-        </a>
-
-        <a href="#management" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
-            <i data-lucide="users" class="w-4 h-4"></i>
-            <span>Management</span>
-        </a>
-
-        <a href="#contact" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
-            <i data-lucide="map-pin" class="w-4 h-4"></i>
-            <span>Contact</span>
-        </a>
-        
-        <a href="#donate-section" class="btn-saffron px-5 py-2.5 rounded-full shadow-lg text-sm md:text-base ml-4 flex items-center gap-1.5 transition duration-300 ease-in-out">
-          <i data-lucide="heart" class="w-4 h-4"></i> Donate Now
-        </a>
-      </nav>
-      
-      <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden text-orange-800 p-2 rounded-full hover:bg-orange-100 transition">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
-      
-    </div>
-    
-    <nav id="mobile-menu" class="hidden md:hidden w-full bg-white/90 shadow-inner py-4 px-6 border-t border-orange-200">
-        <a href="#" onclick="openLoginModal(event)" class="nav-link py-2 flex items-center gap-2 text-base font-bold text-red-700 hover:text-orange-800 border-b border-orange-300 bg-orange-50/50">
-            <i data-lucide="key-round" class="w-4 h-4"></i>
-            <span>Admin Login</span>
-        </a>
-        
-        <a href="#home" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
-            <i data-lucide="home" class="w-4 h-4"></i>
-            <span>Home</span>
-        </a>
-
-        <a href="#about" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
-            <i data-lucide="book-open-text" class="w-4 h-4"></i>
-            <span>History</span>
-        </a>
-
-        <a href="#darshan" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
-            <i data-lucide="clock" class="w-4 h-4"></i>
-            <span>Timings</span>
-        </a>
-
-        <a href="#live" class="nav-link py-2 flex items-center gap-2 text-base font-bold text-red-600 hover:text-orange-800 border-b border-orange-100">
-            <i data-lucide="video" class="w-4 h-4"></i>
-            <span>LIVE Darshan</span>
-        </a>
-
-        <a href="#donate-section" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
-            <i data-lucide="indian-rupee" class="w-4 h-4"></i>
-            <span>Donation</span>
-        </a>
-
-        <a href="#seva" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
-            <i data-lucide="hand-heart" class="w-4 h-4"></i>
-            <span>Puja/Seva</span>
-        </a>
-
-        <a href="#gallery" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
-            <i data-lucide="image" class="w-4 h-4"></i>
-            <span>Gallery</span>
-        </a>
-        
-        <a href="#management" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
-            <i data-lucide="users" class="w-4 h-4"></i>
-            <span>Management</span>
-        </a>
-
-        <a href="#contact" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600">
-            <i data-lucide="map-pin" class="w-4 h-4"></i>
-            <span>Contact</span>
-        </a>
-        
-        <div class="mt-4">
-            <a href="#donate-section" class="btn-saffron w-full py-3 rounded-lg text-sm md:text-base flex items-center justify-center gap-1.5 shadow-lg">
-                <i data-lucide="heart" class="w-4 h-4"></i> Donate Now
+          <nav id="desktop-nav" class="hidden md:flex items-center space-x-7">
+            
+            <a href="#home" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
+                <i data-lucide="home" class="w-4 h-4"></i>
+                <span>Home</span>
             </a>
+    
+            <a href="#about" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
+                <i data-lucide="book-open-text" class="w-4 h-4"></i>
+                <span>History</span>
+            </a>
+    
+            <a href="#darshan" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+                <span>Timings</span>
+            </a>
+    
+            <a href="#live" class="nav-link flex items-center gap-1 text-base font-bold text-red-600 hover:text-orange-800 animate-pulse">
+                <i data-lucide="video" class="w-4 h-4"></i>
+                <span>LIVE Darshan</span>
+            </a>
+    
+            <a href="#donate-section" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
+                <i data-lucide="indian-rupee" class="w-4 h-4"></i>
+                <span>Donation</span>
+            </a>
+    
+            <a href="#seva" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
+                <i data-lucide="hand-heart" class="w-4 h-4"></i>
+                <span>Puja/Seva</span>
+            </a>
+    
+            <a href="#gallery" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
+                <i data-lucide="image" class="w-4 h-4"></i>
+                <span>Gallery</span>
+            </a>
+    
+            <a href="#management" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                <span>Management</span>
+            </a>
+    
+            <a href="#contact" class="nav-link flex items-center gap-1 text-base font-semibold text-gray-700 hover:text-orange-600">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                <span>Contact</span>
+            </a>
+            
+            <a href="#" onclick="openLoginModal(event)" class="btn-saffron px-5 py-2.5 rounded-full shadow-lg text-sm md:text-base ml-4 flex items-center gap-1.5 transition duration-300 ease-in-out">
+              <i data-lucide="key-round" class="w-4 h-4"></i> Admin Login
+            </a>
+          </nav>
+          
+          <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="md:hidden text-orange-800 p-2 rounded-full hover:bg-orange-100 transition">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+          
         </div>
-    </nav>
-</header>
+        
+        <nav id="mobile-menu" class="hidden md:hidden w-full bg-white/90 shadow-inner py-4 px-6 border-t border-orange-200">
+            <a href="#" onclick="openLoginModal(event)" class="nav-link py-2 flex items-center gap-2 text-base font-bold text-red-700 hover:text-orange-800 border-b border-orange-300 bg-orange-50/50">
+                <i data-lucide="key-round" class="w-4 h-4"></i>
+                <span>Admin Login</span>
+            </a>
+            
+            <a href="#home" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600 border-b border-orange-100">
+                <i data-lucide="home" class="w-4 h-4"></i>
+                <span>Home</span>
+            </a>
+            <a href="#contact" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                <span>Contact</span>
+            </a>
+            
+            <div class="mt-4">
+                <a href="#donate-section" class="nav-link py-2 flex items-center gap-2 text-base font-medium text-gray-700 hover:text-orange-600">
+                    <i data-lucide="heart" class="w-4 h-4"></i> Donate Now (Support)
+                </a>
+            </div>
+        </nav>
+    </header>
   
 
 <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center text-white relative overflow-hidden">
