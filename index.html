@@ -21,7 +21,7 @@
       font-family: 'Inter', sans-serif;
       background: linear-gradient(180deg, #fff3e0 0%, #ffe0b2 100%);
       color: var(--dark);
-      scroll-behavior: smooth; /* ✨ ADDED SMOOTH SCROLLING HERE */
+      /* scroll-behavior: smooth;  <-- REMOVED: Handled by JS for header offset */
     }
 
     .btn-saffron {
@@ -45,7 +45,7 @@
     /* 🌄 Replace hero background with uploaded temple image */
     .hero-bg {
       background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-        url('/Images/IMG_4002.jpeg'); /* your uploaded image */
+        url('/Images/IMG_4002.jpeg'); /* Placeholder for your uploaded image */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -113,7 +113,7 @@
 
 <body class="antialiased">
 
-<header class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-orange-300">
+<header id="main-header" class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-orange-300">
     <div class="container mx-auto flex justify-between items-center px-6 py-4">
       
       <a href="#home" class="flex items-center text-2xl md:text-3xl font-extrabold tracking-tight text-orange-800">
@@ -468,15 +468,48 @@
   });
   
   // ==========================================================
-  // JAVASCRIPT FOR MOBILE MENU
+  // JAVASCRIPT FOR MOBILE MENU & SMOOTH SCROLLING
   // ==========================================================
   
+  // NOTE: The height of the fixed header is calculated here to ensure 
+  // the target section is visible and not covered by the header.
+  const FIXED_HEADER_HEIGHT = 80; // Adjust this value (in pixels) if your header height changes
+
+  /**
+   * Performs smooth scrolling to the target element with a header offset.
+   * @param {Event} e - The click event object.
+   */
+  function smoothScrollToTarget(e) {
+    // Check if the link is a internal anchor link
+    if (this.hash) {
+      // 1. Prevent the default instant jump
+      e.preventDefault();
+
+      // 2. Determine the target section ID (e.g., from "#home" to "home")
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+          // 3. Calculate the target position: element's top position + scroll position - header height
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - FIXED_HEADER_HEIGHT;
+          
+          // 4. Smoothly scroll the window to the calculated position
+          window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth' 
+          });
+      }
+      
+      // 5. Close the mobile menu after clicking a link (optional, but good UX)
+      closeMobileMenu();
+    }
+  }
+
   // Utility function to close the menu and reset the icon
   function closeMobileMenu() {
       const mobileMenu = document.getElementById('mobile-menu');
       const icon = document.querySelector('#mobile-menu-button i');
       
-      // Only close if it's currently open
       if (!mobileMenu.classList.contains('hidden')) {
           mobileMenu.classList.add('hidden');
           icon.setAttribute('data-lucide', 'menu');
@@ -489,10 +522,8 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const icon = document.querySelector('#mobile-menu-button i');
     
-    // Toggle the 'hidden' class
     mobileMenu.classList.toggle('hidden');
     
-    // Toggle the icon
     if (mobileMenu.classList.contains('hidden')) {
       icon.setAttribute('data-lucide', 'menu');
     } else {
@@ -501,19 +532,22 @@
     lucide.createIcons(); 
   }
 
+  // ==========================================================
+  // INITIALIZATION AND EVENT LISTENERS
+  // ==========================================================
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Get all links inside the mobile menu
-    const mobileLinks = document.querySelectorAll('#mobile-menu a');
+    // Create Lucide icons everywhere
+    lucide.createIcons();
     
-    // 2. Loop through them and add the close function to each click event
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
+    // Select all links that start with # (internal anchors)
+    const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
+    
+    allAnchorLinks.forEach(link => {
+      // Attach the smoothScrollToTarget function to all internal links
+      link.addEventListener('click', smoothScrollToTarget);
     });
 
-    // ==========================================================
-    // EXISTING JAVASCRIPT
-    // ==========================================================
-    lucide.createIcons();
+    // Existing donation form logic
     const donationForm = document.getElementById('donation-form');
     const msg = document.getElementById('form-message');
     if (donationForm) {
